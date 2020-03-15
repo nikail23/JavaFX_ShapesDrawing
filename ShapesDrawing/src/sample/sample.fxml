@@ -89,11 +89,11 @@
          </children></AnchorPane>
       <AnchorPane layoutX="825.0" layoutY="50.0" prefHeight="224.0" prefWidth="161.0" style="-fx-background-color: #00406b;">
          <children>
-            <ListView prefHeight="224.0" prefWidth="161.0" style="-fx-background-color: #00406b;" />
+            <ListView layoutX="-4.0" prefHeight="224.0" prefWidth="167.0" style="-fx-background-color: #00406b;" />
          </children></AnchorPane>
       <AnchorPane layoutX="825.0" layoutY="313.0" prefHeight="277.0" prefWidth="161.0" style="-fx-background-color: #00406b;">
          <children>
-            <TableView prefHeight="277.0" prefWidth="171.0" style="-fx-background-color: #00406b;">
+            <TableView layoutX="-6.0" prefHeight="277.0" prefWidth="171.0" style="-fx-background-color: #00406b;">
               <columns>
                 <TableColumn prefWidth="101.0" text="Property" />
                 <TableColumn prefWidth="69.0" text="Value" />
