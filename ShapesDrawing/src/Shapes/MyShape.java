@@ -3,7 +3,9 @@ package Shapes;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.paint.Color;
 
-public abstract class MyShape {
+import java.io.Serializable;
+
+public abstract class MyShape extends Object implements Serializable {
     protected String name;
     protected Color color;
     protected int thickness;
