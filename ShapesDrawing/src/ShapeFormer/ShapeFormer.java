@@ -1,10 +1,10 @@
 package ShapeFormer;
 
+import Shapes.MyRectangle;
 import Shapes.MyShape;
+import Shapes.MySquare;
 import javafx.scene.paint.Color;
-
 import java.awt.*;
-import java.util.Dictionary;
 
 public class ShapeFormer {
     private static Point defaultFirstPoint = new Point(0, 0);
@@ -17,40 +17,42 @@ public class ShapeFormer {
     private int shapeTag;
     private Color shapeColor;
     private int shapeThickness;
-    public ShapeFormer()
-    {
+
+    public ShapeFormer() {
         firstPoint = defaultFirstPoint;
         secondPoint = defaultSecondPoint;
         shapeTag = defaultShapeTag;
         shapeColor = defaultShapeColor;
         shapeThickness = defaultShapeThickness;
     }
+
     public void SetFirstPoint(Point firstPoint) {
         this.firstPoint = firstPoint;
     }
+
     public void SetSecondPoint(Point secondPoint) {
         this.secondPoint = secondPoint;
     }
+
     public void SetShapeTag(int shapeTag) {
         this.shapeTag = shapeTag;
     }
+
     public void SetShapeColor(Color shapeColor) {
         this.shapeColor = shapeColor;
     }
+
     public void SetShapeThickness(int shapeThickness) {
         this.shapeThickness = shapeThickness;
     }
-    private void AddShapesToDictionary()
-    {
-        shapesDictionary = new Dictionary<int, MyShape>();
-        shapesDictionary.Add(1, new Circle(startPoint, finishPoint, color, thickness, "Circle"));
-        shapesDictionary.Add(2, new Square(startPoint, finishPoint, color, thickness, "Square"));
-        shapesDictionary.Add(3, new Rectangle(startPoint, finishPoint, color, thickness, "Rectangle"));
-        shapesDictionary.Add(4, new Triangle(startPoint, finishPoint, color, thickness, "Triangle"));
-        shapesDictionary.Add(5, new Ellipse(startPoint, finishPoint, color, thickness, "Ellipse"));
-        shapesDictionary.Add(6, new Line(startPoint, finishPoint, color, thickness, "Line"));
-    }
-    MyShape CreateShape() {
-        
+
+    public MyShape CreateShape() {
+        switch (shapeTag) {
+            case 1:
+                return new MyRectangle("Rectangle", firstPoint, secondPoint, shapeColor, shapeThickness);
+            case 5:
+                return new MySquare("Square", firstPoint, secondPoint, shapeColor, shapeThickness);
+        }
+        return null;
     }
 }

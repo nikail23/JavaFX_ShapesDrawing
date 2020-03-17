@@ -3,29 +3,37 @@ package Shapes;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
+import java.awt.*;
 
 public class MyRectangle extends MyShape {
-    private int x;
-    private int y;
-    private int width;
-    private int height;
-    public MyRectangle(int x, int y, int width, int height, Color color, int thickness) {
-        super("Rectangle", color, thickness);
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
+    protected int x;
+    protected int y;
+    protected int width;
+    protected int height;
+
+    public MyRectangle(String name, Point firstPoint, Point secondPoint, Color color, int thickness) {
+        super(name, color, thickness);
+        this.x = firstPoint.x;
+        this.y = firstPoint.y;
+        this.width = secondPoint.x - firstPoint.x;
+        this.height = secondPoint.y - firstPoint.y;
+        if ((this.width < 0)) {
+            this.x = secondPoint.x;
+        }
+        if ((this.height < 0)) {
+            this.y = secondPoint.y;
+        }
+        this.width = Math.abs(this.width);
+        this.height = Math.abs(this.height);
     }
-    @Override public void draw(Canvas canvas)
-    {
-        Rectangle rectangle = new Rectangle();
-        rectangle.setX(x);
-        rectangle.setY(y);
-        rectangle.setWidth(width);
-        rectangle.setHeight(height);
+
+    @Override
+    public void draw(Canvas canvas) {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.setLineWidth(thickness);
         graphicsContext.setFill(color);
+        graphicsContext.fillRect(x, y, width, height);
+        graphicsContext.setFill(Color.WHITE);  // можно сделать цвет обводки и главный цвет отдельно
+        graphicsContext.fillRect(x + thickness, y + thickness, width - 2 * thickness, height - 2 * thickness);
     }
 }
