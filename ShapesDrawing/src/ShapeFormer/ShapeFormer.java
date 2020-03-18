@@ -48,12 +48,16 @@ public class ShapeFormer {
         switch (shapeTag) {
             case 1:
                 return new MyRectangle("Rectangle", firstPoint, secondPoint, shapeColor, shapeThickness);
+            case 2:
+                return new MyTriangle("Triangle", firstPoint, secondPoint, shapeColor, shapeThickness);
             case 3:
                 return new MyCircle("Circle", firstPoint, secondPoint, shapeColor, shapeThickness);
             case 4:
                 return new MyEllipse("Ellipse", firstPoint, secondPoint, shapeColor, shapeThickness);
             case 5:
                 return new MySquare("Square", firstPoint, secondPoint, shapeColor, shapeThickness);
+            case 6:
+                return new MyLine("Line", firstPoint, secondPoint, shapeColor, shapeThickness);
         }
         return null;
     }

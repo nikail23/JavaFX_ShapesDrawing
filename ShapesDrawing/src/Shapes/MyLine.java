@@ -8,8 +8,8 @@ import javafx.scene.paint.Color;
 import java.awt.*;
 
 public class MyLine extends MyShape {
-    private Point firstPoint;
-    private Point secondPoint;
+    protected Point firstPoint;
+    protected Point secondPoint;
 
     public MyLine(String name, Point firstPoint, Point secondPoint, Color shapeColor, int shapeThickness) {
         super(name, shapeColor, shapeThickness);
@@ -22,6 +22,9 @@ public class MyLine extends MyShape {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.setFill(shapeColor);
         graphicsContext.setLineWidth(shapeThickness);
-        //graphicsContext.setline
+        graphicsContext.beginPath();
+        graphicsContext.moveTo(firstPoint.x, firstPoint.y);
+        graphicsContext.lineTo(secondPoint.x, secondPoint.y);
+        graphicsContext.stroke();
     }
 }
