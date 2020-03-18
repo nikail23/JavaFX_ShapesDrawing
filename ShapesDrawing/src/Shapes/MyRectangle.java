@@ -30,10 +30,9 @@ public class MyRectangle extends MyShape {
     @Override
     public void draw(Canvas canvas) {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.setLineWidth(thickness);
-        graphicsContext.setFill(color);
+        graphicsContext.setFill(shapeColor);
         graphicsContext.fillRect(x, y, width, height);
         graphicsContext.setFill(Color.WHITE);  // можно сделать цвет обводки и главный цвет отдельно
-        graphicsContext.fillRect(x + thickness, y + thickness, width - 2 * thickness, height - 2 * thickness);
+        graphicsContext.fillRect(x + shapeThickness, y + shapeThickness, width - 2 * shapeThickness, height - 2 * shapeThickness);
     }
 }

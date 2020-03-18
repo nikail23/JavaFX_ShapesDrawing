@@ -5,13 +5,13 @@ import javafx.scene.paint.Color;
 
 public abstract class MyShape {
     protected String name;
-    protected Color color;
-    protected int thickness;
+    protected Color shapeColor;
+    protected int shapeThickness;
 
-    public MyShape(String name, Color color, int thickness) {
+    public MyShape(String name, Color shapeColor, int shapeThickness) {
         this.name = name;
-        this.color = color;
-        this.thickness = thickness;
+        this.shapeColor = shapeColor;
+        this.shapeThickness = shapeThickness;
     }
 
     public abstract void draw(Canvas canvas);
