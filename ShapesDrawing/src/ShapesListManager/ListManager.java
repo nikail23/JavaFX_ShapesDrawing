@@ -13,4 +13,8 @@ public interface ListManager {
     List<MyShape> GetList();
 
     void SaveList();
+
+    void Undo();
+
+    void Redo();
 }

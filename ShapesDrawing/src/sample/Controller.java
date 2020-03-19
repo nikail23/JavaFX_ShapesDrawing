@@ -14,6 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
@@ -31,6 +32,11 @@ public class Controller {
     public Controller() {
         shapesListManager = new ShapesListManager(new ArrayList<MyShape>(), new ArrayList<MyShape>());
         shapeFormer = new ShapeFormer();
+    }
+
+    private void ClearCanvas(Canvas canvas) {
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
     }
 
     private Point GetClickPoint(MouseEvent event) {
@@ -146,6 +152,16 @@ public class Controller {
                 String stringShapeThickness = String.valueOf(newValue.intValue());
                 thicknessValue.setText(stringShapeThickness);
             }
+        });
+        undoButton.setOnAction(event -> {
+            shapesListManager.Undo();
+            ClearCanvas(drawingCanvas);
+            shapesListManager.DrawAllShapes(drawingCanvas);
+        });
+        redoButton.setOnAction(event -> {
+            shapesListManager.Redo();
+            ClearCanvas(drawingCanvas);
+            shapesListManager.DrawAllShapes(drawingCanvas);
         });
     }
 }

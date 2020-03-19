@@ -20,8 +20,10 @@ public class ShapesListManager implements ListManager {
     }
 
     public void Delete(int shapeIndex) {
-        if (shapeIndex >= 0)
+        if ((shapeIndex >= 0)&&(shapeIndex < currentShapes.size())) {
+            deletedShapes.add(currentShapes.get(shapeIndex));
             currentShapes.remove(shapeIndex);
+        }
     }
 
     public void LoadList() {
@@ -39,6 +41,21 @@ public class ShapesListManager implements ListManager {
     public void DrawAllShapes(Canvas canvas) {
         for (MyShape shape : currentShapes) {
             shape.draw(canvas);
+        }
+    }
+
+    public void Undo() {
+        if (currentShapes.size() != 0) {
+            int currentShapesLastIndex = currentShapes.size()-1;
+            Delete(currentShapesLastIndex);
+        }
+    }
+
+    public void Redo() {
+        if (deletedShapes.size() != 0) {
+            int deletedShapesLastIndex = deletedShapes.size() - 1;
+            Add(deletedShapes.get(deletedShapesLastIndex));
+            deletedShapes.remove(deletedShapesLastIndex);
         }
     }
 }
