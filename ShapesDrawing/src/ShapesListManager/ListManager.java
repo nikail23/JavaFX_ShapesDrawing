@@ -17,4 +17,8 @@ public interface ListManager {
     void Undo();
 
     void Redo();
+
+    void ClearCurrentShapesList();
+
+    void ClearDeletedShapesList();
 }

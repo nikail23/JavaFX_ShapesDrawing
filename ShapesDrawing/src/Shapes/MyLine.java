@@ -4,10 +4,10 @@ package Shapes;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-
 import java.awt.*;
+import java.io.Serializable;
 
-public class MyLine extends MyShape {
+public class MyLine extends MyShape implements Serializable {
     protected Point firstPoint;
     protected Point secondPoint;
 
@@ -20,7 +20,7 @@ public class MyLine extends MyShape {
     @Override
     public void draw(Canvas canvas) {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.setFill(shapeColor);
+        graphicsContext.setFill(GetColor());
         graphicsContext.setLineWidth(shapeThickness);
         graphicsContext.beginPath();
         graphicsContext.moveTo(firstPoint.x, firstPoint.y);

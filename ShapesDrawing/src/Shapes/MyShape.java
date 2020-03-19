@@ -3,15 +3,29 @@ package Shapes;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.paint.Color;
 
-public abstract class MyShape {
+
+import java.io.Serializable;
+
+public abstract class MyShape implements Serializable {
     protected String name;
-    protected Color shapeColor;
+    private int shapeColor;
     protected int shapeThickness;
 
     public MyShape(String name, Color shapeColor, int shapeThickness) {
         this.name = name;
-        this.shapeColor = shapeColor;
+        this.shapeColor = (int) (shapeColor.getRed() * 0xFF) |
+                ((int) (shapeColor.getGreen() * 0xFF)) << 010 |
+                ((int) (shapeColor.getBlue() * 0xFF)) << 020 |
+                ((int) (shapeColor.getOpacity() * 0xFF)) << 030;
         this.shapeThickness = shapeThickness;
+    }
+
+    public Color GetColor() {
+        return Color.rgb(
+                shapeColor & 0xFF,
+                (shapeColor >>> 010) & 0xFF,
+                (shapeColor >>> 020) & 0xFF,
+                (shapeColor >>> 030) / 255d);
     }
 
     public abstract void draw(Canvas canvas);

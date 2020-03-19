@@ -4,8 +4,9 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import java.awt.*;
+import java.io.Serializable;
 
-public class MyRectangle extends MyShape {
+public class MyRectangle extends MyShape implements Serializable {
     protected int x;
     protected int y;
     protected int width;
@@ -30,7 +31,7 @@ public class MyRectangle extends MyShape {
     @Override
     public void draw(Canvas canvas) {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.setFill(shapeColor);
+        graphicsContext.setFill(GetColor());
         graphicsContext.fillRect(x, y, width, height);
         graphicsContext.setFill(Color.WHITE);  // можно сделать цвет обводки и главный цвет отдельно
         graphicsContext.fillRect(x + shapeThickness, y + shapeThickness, width - 2 * shapeThickness, height - 2 * shapeThickness);

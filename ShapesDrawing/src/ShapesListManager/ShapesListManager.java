@@ -1,6 +1,7 @@
 package ShapesListManager;
 
 import Shapes.MyShape;
+import ShapesListManager.Serializer.Serializer;
 import javafx.scene.canvas.Canvas;
 
 import java.util.List;
@@ -8,10 +9,12 @@ import java.util.List;
 public class ShapesListManager implements ListManager {
     private List<MyShape> currentShapes;
     private List<MyShape> deletedShapes;
+    private Serializer serializer;
 
-    public ShapesListManager(List<MyShape> currentShapes, List<MyShape> deletedShapes) {
+    public ShapesListManager(List<MyShape> currentShapes, List<MyShape> deletedShapes, Serializer serializer) {
         this.currentShapes = currentShapes;
         this.deletedShapes = deletedShapes;
+        this.serializer = serializer;
     }
 
     public void Add(MyShape shape) {
@@ -27,7 +30,7 @@ public class ShapesListManager implements ListManager {
     }
 
     public void LoadList() {
-        //
+        currentShapes = serializer.Deserialize();
     }
 
     public List<MyShape> GetList() {
@@ -35,7 +38,7 @@ public class ShapesListManager implements ListManager {
     }
 
     public void SaveList() {
-        //
+        serializer.Serialize(currentShapes);
     }
 
     public void DrawAllShapes(Canvas canvas) {
@@ -57,5 +60,13 @@ public class ShapesListManager implements ListManager {
             Add(deletedShapes.get(deletedShapesLastIndex));
             deletedShapes.remove(deletedShapesLastIndex);
         }
+    }
+
+    public void ClearCurrentShapesList() {
+        currentShapes.clear();
+    }
+
+    public void ClearDeletedShapesList() {
+        deletedShapes.clear();
     }
 }

@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import ShapeFormer.ShapeFormer;
 import Shapes.MyShape;
+import ShapesListManager.Serializer.BinarySerializer;
 import ShapesListManager.ShapesListManager;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -30,7 +31,7 @@ public class Controller {
     private ShapeFormer shapeFormer;
 
     public Controller() {
-        shapesListManager = new ShapesListManager(new ArrayList<MyShape>(), new ArrayList<MyShape>());
+        shapesListManager = new ShapesListManager(new ArrayList<MyShape>(), new ArrayList<MyShape>(), new BinarySerializer("save.bin"));
         shapeFormer = new ShapeFormer();
     }
 
@@ -98,6 +99,9 @@ public class Controller {
     private TableView<?> propertyTable;
 
     @FXML
+    private Button clearButton;
+
+    @FXML
     void initialize() {
         assert drawingCanvas != null : "fx:id=\"drawingCanvas\" was not injected: check your FXML file 'sample.fxml'.";
         assert rectangleButton != null : "fx:id=\"rectangleButton\" was not injected: check your FXML file 'sample.fxml'.";
@@ -115,6 +119,7 @@ public class Controller {
         assert thicknessValue != null : "fx:id=\"thicknessValue\" was not injected: check your FXML file 'sample.fxml'.";
         assert shapesList != null : "fx:id=\"shapesList\" was not injected: check your FXML file 'sample.fxml'.";
         assert propertyTable != null : "fx:id=\"propertyTable\" was not injected: check your FXML file 'sample.fxml'.";
+        assert clearButton != null : "fx:id=\"clearButton\" was not injected: check your FXML file 'sample.fxml'.";
         rectangleButton.setOnAction(e -> {
             shapeFormer.SetShapeTag(1);
         });
@@ -162,6 +167,18 @@ public class Controller {
             shapesListManager.Redo();
             ClearCanvas(drawingCanvas);
             shapesListManager.DrawAllShapes(drawingCanvas);
+        });
+        saveButton.setOnAction(event -> {
+            shapesListManager.SaveList();
+        });
+        loadButton.setOnAction(event -> {
+            shapesListManager.LoadList();
+            shapesListManager.DrawAllShapes(drawingCanvas);
+        });
+        clearButton.setOnAction(event -> {
+            shapesListManager.ClearCurrentShapesList();
+            shapesListManager.ClearDeletedShapesList();
+            ClearCanvas(drawingCanvas);
         });
     }
 }

@@ -6,9 +6,20 @@
       <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/ShapesListManager/ListManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/ShapesListManager/ListManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/ShapesListManager/ShapesListManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/ShapesListManager/ShapesListManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/sample/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/sample/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shapes/MyCircle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shapes/MyCircle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shapes/MyEllipse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shapes/MyEllipse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shapes/MyLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shapes/MyLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shapes/MyRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shapes/MyRectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shapes/MyShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shapes/MyShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shapes/MySquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shapes/MySquare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shapes/MyTriangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shapes/MyTriangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShapesListManager/BinarySerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShapesListManager/Serializer/BinarySerializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShapesListManager/ListManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShapesListManager/ListManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShapesListManager/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShapesListManager/Serializer/Serializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShapesListManager/ShapesListManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShapesListManager/ShapesListManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +209,7 @@
       <workItem from="1584469134932" duration="8484000" />
       <workItem from="1584537104399" duration="2791000" />
       <workItem from="1584555965157" duration="5047000" />
-      <workItem from="1584622574915" duration="1528000" />
+      <workItem from="1584622574915" duration="7957000" />
     </task>
     <servers />
   </component>
@@ -210,30 +221,34 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1584538964956">
+    <state x="446" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584630537488">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1584538964956" />
+    <state x="446" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1584630537488" />
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1584630247975">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1584630247975" />
     <state x="463" y="104" key="FileChooserDialogImpl" timestamp="1584281282488">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="104" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584281282488" />
-    <state width="1322" height="174" key="GridCell.Tab.0.bottom" timestamp="1584623888681">
+    <state width="1322" height="174" key="GridCell.Tab.0.bottom" timestamp="1584630558200">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584623888681" />
-    <state width="1322" height="174" key="GridCell.Tab.0.center" timestamp="1584623888681">
+    <state width="1322" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584630558200" />
+    <state width="1322" height="174" key="GridCell.Tab.0.center" timestamp="1584630558200">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584623888681" />
-    <state width="1322" height="174" key="GridCell.Tab.0.left" timestamp="1584623888681">
+    <state width="1322" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584630558200" />
+    <state width="1322" height="174" key="GridCell.Tab.0.left" timestamp="1584630558199">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584623888681" />
-    <state width="1322" height="174" key="GridCell.Tab.0.right" timestamp="1584623888681">
+    <state width="1322" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584630558199" />
+    <state width="1322" height="174" key="GridCell.Tab.0.right" timestamp="1584630558200">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584623888681" />
+    <state width="1322" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584630558200" />
     <state width="1322" height="216" key="GridCell.Tab.1.bottom" timestamp="1584561048884">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -254,5 +269,16 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="384" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584622578302" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ShapesListManager/Serializer/BinarySerializer.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -4,8 +4,9 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import java.awt.*;
+import java.io.Serializable;
 
-public class MyTriangle extends MyLine {
+public class MyTriangle extends MyLine implements Serializable {
     protected Point firstTrianglePoint;
     protected Point secondTrianglePoint;
     protected Point thirdTrianglePoint;
@@ -59,7 +60,7 @@ public class MyTriangle extends MyLine {
     @Override
     public void draw(Canvas canvas) {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.setFill(shapeColor);
+        graphicsContext.setFill(GetColor());
         graphicsContext.setLineWidth(shapeThickness);
         graphicsContext.beginPath();
         graphicsContext.moveTo(firstTrianglePoint.x, firstTrianglePoint.y);

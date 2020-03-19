@@ -13,7 +13,7 @@ public class MyEllipse extends MyRectangle {
     @Override
     public void draw(Canvas canvas) {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.setFill(shapeColor);
+        graphicsContext.setFill(GetColor());
         graphicsContext.fillOval(x, y, width, height);
         graphicsContext.setFill(Color.WHITE);
         graphicsContext.fillOval(x + shapeThickness, y + shapeThickness, width - 2 * shapeThickness, height - 2 * shapeThickness);
