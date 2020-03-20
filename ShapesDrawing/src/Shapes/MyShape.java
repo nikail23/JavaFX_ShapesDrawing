@@ -20,12 +20,45 @@ public abstract class MyShape implements Serializable {
         this.shapeThickness = shapeThickness;
     }
 
+    public void SetName(String name) {
+        this.name = name;
+    }
+
+    public String GetName() {
+        return this.name;
+    }
+
+    public void SetColor(Color shapeColor) {
+        this.shapeColor = (int) (shapeColor.getRed() * 0xFF) |
+                ((int) (shapeColor.getGreen() * 0xFF)) << 010 |
+                ((int) (shapeColor.getBlue() * 0xFF)) << 020 |
+                ((int) (shapeColor.getOpacity() * 0xFF)) << 030;
+    }
+
     public Color GetColor() {
         return Color.rgb(
                 shapeColor & 0xFF,
                 (shapeColor >>> 010) & 0xFF,
                 (shapeColor >>> 020) & 0xFF,
                 (shapeColor >>> 030) / 255d);
+    }
+
+    public void SetIntColor(int shapeColor) {
+        this.shapeColor = shapeColor;
+    }
+
+    public int GetIntColor() {
+        return this.shapeColor;
+    }
+
+    public void SetThickness(int shapeThickness) {
+        if (shapeThickness > 0) {
+            this.shapeThickness = shapeThickness;
+        }
+    }
+
+    public int GetThickness() {
+        return this.shapeThickness;
     }
 
     public abstract void draw(Canvas canvas);

@@ -17,6 +17,26 @@ public class MyLine extends MyShape implements Serializable {
         this.secondPoint = secondPoint;
     }
 
+    public void SetFirstPoint(Point firstPoint) {
+        if ((firstPoint != null)&&(firstPoint.x >= 0)&&(firstPoint.y >= 0)) {
+            this.firstPoint = firstPoint;
+        }
+    }
+
+    public Point GetFirstPoint() {
+        return this.firstPoint;
+    }
+
+    public void SetSecondPoint(Point secondPoint) {
+        if ((secondPoint != null)&&(secondPoint.x >= 0)&&(secondPoint.y >= 0)) {
+            this.secondPoint = secondPoint;
+        }
+    }
+
+    public Point GetSecondPoint() {
+        return this.secondPoint;
+    }
+
     @Override
     public void draw(Canvas canvas) {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();

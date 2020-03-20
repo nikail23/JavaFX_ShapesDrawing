@@ -11,20 +11,14 @@ import ShapesListManager.Serializer.BinarySerializer;
 import ShapesListManager.ShapesListManager;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TableView;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.cell.TextFieldListCell;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 
 public class Controller {
     private ShapesListManager shapesListManager;
@@ -93,13 +87,16 @@ public class Controller {
     private Label thicknessValue;
 
     @FXML
-    private ListView<?> shapesList;
+    private ListView<String> shapesList;
 
     @FXML
-    private TableView<?> propertyTable;
+    private ListView<String> propertyList;
 
     @FXML
     private Button clearButton;
+
+    @FXML
+    private ListView<String> propertyNameList;
 
     @FXML
     void initialize() {
@@ -118,8 +115,16 @@ public class Controller {
         assert loadButton != null : "fx:id=\"loadButton\" was not injected: check your FXML file 'sample.fxml'.";
         assert thicknessValue != null : "fx:id=\"thicknessValue\" was not injected: check your FXML file 'sample.fxml'.";
         assert shapesList != null : "fx:id=\"shapesList\" was not injected: check your FXML file 'sample.fxml'.";
-        assert propertyTable != null : "fx:id=\"propertyTable\" was not injected: check your FXML file 'sample.fxml'.";
+        assert propertyList != null : "fx:id=\"propertyList\" was not injected: check your FXML file 'sample.fxml'.";
         assert clearButton != null : "fx:id=\"clearButton\" was not injected: check your FXML file 'sample.fxml'.";
+        assert propertyNameList != null : "fx:id=\"propertyNameList\" was not injected: check your FXML file 'sample.fxml'.";
+        propertyList.setCellFactory(TextFieldListCell.forListView());
+        propertyList.setOnEditCommit(event -> {
+            shapesListManager.ConfirmShapeChanges(propertyList, event.getNewValue(), event.getIndex());
+            ClearCanvas(drawingCanvas);
+            shapesListManager.RefreshListView(shapesList);
+            shapesListManager.DrawAllShapes(drawingCanvas);
+        });
         rectangleButton.setOnAction(e -> {
             shapeFormer.SetShapeTag(1);
         });
@@ -144,6 +149,7 @@ public class Controller {
         drawingCanvas.setOnMouseReleased(event -> {
             shapeFormer.SetSecondPoint(new Point(GetClickPoint(event)));
             shapesListManager.Add(shapeFormer.CreateShape());
+            shapesListManager.RefreshListView(shapesList);
             shapesListManager.DrawAllShapes(drawingCanvas);
         });
         colorDialog.setOnAction(event -> {
@@ -161,11 +167,13 @@ public class Controller {
         undoButton.setOnAction(event -> {
             shapesListManager.Undo();
             ClearCanvas(drawingCanvas);
+            shapesListManager.RefreshListView(shapesList);
             shapesListManager.DrawAllShapes(drawingCanvas);
         });
         redoButton.setOnAction(event -> {
             shapesListManager.Redo();
             ClearCanvas(drawingCanvas);
+            shapesListManager.RefreshListView(shapesList);
             shapesListManager.DrawAllShapes(drawingCanvas);
         });
         saveButton.setOnAction(event -> {
@@ -173,12 +181,17 @@ public class Controller {
         });
         loadButton.setOnAction(event -> {
             shapesListManager.LoadList();
+            shapesListManager.RefreshListView(shapesList);
             shapesListManager.DrawAllShapes(drawingCanvas);
         });
         clearButton.setOnAction(event -> {
             shapesListManager.ClearCurrentShapesList();
             shapesListManager.ClearDeletedShapesList();
+            shapesListManager.RefreshListView(shapesList);
             ClearCanvas(drawingCanvas);
+        });
+        shapesList.setOnMouseClicked(event -> {
+            shapesListManager.ShowShapesProperties(shapesList.getSelectionModel().getSelectedIndex(), propertyList, propertyNameList);
         });
     }
 }

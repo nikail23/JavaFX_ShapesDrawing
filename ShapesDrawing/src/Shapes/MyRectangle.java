@@ -28,6 +28,46 @@ public class MyRectangle extends MyShape implements Serializable {
         this.height = Math.abs(this.height);
     }
 
+    public void SetX(int x) {
+        if (x >= 0) {
+            this.x = x;
+        }
+    }
+
+    public int GetX() {
+        return this.x;
+    }
+
+    public void SetY(int y) {
+        if (y >= 0) {
+            this.y = y;
+        }
+    }
+
+    public int GetY() {
+        return this.y;
+    }
+
+    public void SetWidth(int width) {
+        if (width >= 0) {
+            this.width = width;
+        }
+    }
+
+    public int GetWidth() {
+        return this.width;
+    }
+
+    public void SetHeight(int height) {
+        if (height >= 0) {
+            this.height = height;
+        }
+    }
+
+    public int GetHeight() {
+        return this.height;
+    }
+
     @Override
     public void draw(Canvas canvas) {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
