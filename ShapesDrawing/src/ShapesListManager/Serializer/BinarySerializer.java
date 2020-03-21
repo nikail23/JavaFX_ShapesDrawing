@@ -1,7 +1,6 @@
 package ShapesListManager.Serializer;
 
 import Shapes.MyShape;
-import ShapesListManager.ShapesListManager;
 
 import java.io.*;
 import java.util.List;
@@ -28,7 +27,7 @@ public class BinarySerializer implements Serializer {
     public List<MyShape> Deserialize() {
         try (FileInputStream fileInputStream = new FileInputStream(savePath)) {
             try (ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
-                return (List<MyShape>)objectInputStream.readObject();
+                return (List<MyShape>) objectInputStream.readObject();
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();

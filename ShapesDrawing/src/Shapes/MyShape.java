@@ -2,13 +2,11 @@ package Shapes;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.paint.Color;
-
-
 import java.io.Serializable;
 
 public abstract class MyShape implements Serializable {
     protected String name;
-    private int shapeColor;
+    protected int shapeColor;
     protected int shapeThickness;
 
     public MyShape(String name, Color shapeColor, int shapeThickness) {
@@ -61,5 +59,5 @@ public abstract class MyShape implements Serializable {
         return this.shapeThickness;
     }
 
-    public abstract void draw(Canvas canvas);
+    public abstract void Draw(Canvas canvas);
 }

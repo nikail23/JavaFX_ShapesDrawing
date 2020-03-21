@@ -3,6 +3,7 @@ package Shapes;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+
 import java.awt.*;
 
 public class MyEllipse extends MyRectangle {
@@ -11,7 +12,7 @@ public class MyEllipse extends MyRectangle {
     }
 
     @Override
-    public void draw(Canvas canvas) {
+    public void Draw(Canvas canvas) {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.setFill(GetColor());
         graphicsContext.fillOval(x, y, width, height);

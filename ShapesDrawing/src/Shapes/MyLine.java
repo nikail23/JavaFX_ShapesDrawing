@@ -4,6 +4,7 @@ package Shapes;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+
 import java.awt.*;
 import java.io.Serializable;
 
@@ -18,7 +19,7 @@ public class MyLine extends MyShape implements Serializable {
     }
 
     public void SetFirstPoint(Point firstPoint) {
-        if ((firstPoint != null)&&(firstPoint.x >= 0)&&(firstPoint.y >= 0)) {
+        if ((firstPoint != null) && (firstPoint.x >= 0) && (firstPoint.y >= 0)) {
             this.firstPoint = firstPoint;
         }
     }
@@ -28,7 +29,7 @@ public class MyLine extends MyShape implements Serializable {
     }
 
     public void SetSecondPoint(Point secondPoint) {
-        if ((secondPoint != null)&&(secondPoint.x >= 0)&&(secondPoint.y >= 0)) {
+        if ((secondPoint != null) && (secondPoint.x >= 0) && (secondPoint.y >= 0)) {
             this.secondPoint = secondPoint;
         }
     }
@@ -38,9 +39,9 @@ public class MyLine extends MyShape implements Serializable {
     }
 
     @Override
-    public void draw(Canvas canvas) {
+    public void Draw(Canvas canvas) {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.setFill(GetColor());
+        graphicsContext.setStroke(GetColor());
         graphicsContext.setLineWidth(shapeThickness);
         graphicsContext.beginPath();
         graphicsContext.moveTo(firstPoint.x, firstPoint.y);

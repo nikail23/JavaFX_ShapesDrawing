@@ -2,20 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ShapesListManager/MyShapesListManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/ShapesListManager/ListManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/ShapesListManager/ListManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/ShapeFormer/ShapeFormer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/ShapeFormer/ShapeFormer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/Shapes/MyEllipse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/Shapes/MyEllipse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/Shapes/MyLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/Shapes/MyLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/Shapes/MyRectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/Shapes/MyRectangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/Shapes/MyShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/Shapes/MyShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/Shapes/MySquare.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/Shapes/MySquare.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/Shapes/MyTriangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/Shapes/MyTriangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/ShapesListManager/ListManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/ShapesListManager/Serializer/BinarySerializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/ShapesListManager/Serializer/BinarySerializer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/ShapesListManager/ShapesListManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/ShapesListManager/ShapesListManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/sample/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/sample/Controller$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/sample/Controller$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/sample/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ShapesDrawing/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ShapesDrawing/sample/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save.bin" beforeDir="false" afterPath="$PROJECT_DIR$/save.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShapeFormer/ShapeFormer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShapeFormer/MyShapeFormer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shapes/MyEllipse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shapes/MyEllipse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Shapes/MyLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shapes/MyLine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Shapes/MyRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shapes/MyRectangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Shapes/MyShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shapes/MyShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shapes/MySquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shapes/MySquare.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Shapes/MyTriangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shapes/MyTriangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShapesListManager/ListManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShapesListManager/ListManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShapesListManager/ListManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShapesListManager/Serializer/BinarySerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShapesListManager/Serializer/BinarySerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShapesListManager/Serializer/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShapesListManager/Serializer/Serializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShapesListManager/ShapesListManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShapesListManager/ShapesListManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,6 +221,7 @@
       <workItem from="1584555965157" duration="5047000" />
       <workItem from="1584622574915" duration="7957000" />
       <workItem from="1584700945339" duration="18467000" />
+      <workItem from="1584794563502" duration="6545000" />
     </task>
     <servers />
   </component>
@@ -222,34 +237,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="446" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1584630537488" />
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1584630247975">
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1584802064776">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1584630247975" />
-    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584709881060">
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1584802064776" />
+    <state x="164" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584798591231">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1584709881060" />
+    <state x="164" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1584798591231" />
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584801007378">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1584801007378" />
     <state x="463" y="104" key="FileChooserDialogImpl" timestamp="1584281282488">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="104" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584281282488" />
-    <state width="1322" height="255" key="GridCell.Tab.0.bottom" timestamp="1584720077292">
+    <state width="1322" height="174" key="GridCell.Tab.0.bottom" timestamp="1584802621635">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="255" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584720077292" />
-    <state width="1322" height="255" key="GridCell.Tab.0.center" timestamp="1584720077292">
+    <state width="1322" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584802621635" />
+    <state width="1322" height="174" key="GridCell.Tab.0.center" timestamp="1584802621634">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="255" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584720077292" />
-    <state width="1322" height="255" key="GridCell.Tab.0.left" timestamp="1584720077292">
+    <state width="1322" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584802621634" />
+    <state width="1322" height="174" key="GridCell.Tab.0.left" timestamp="1584802621634">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="255" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584720077292" />
-    <state width="1322" height="255" key="GridCell.Tab.0.right" timestamp="1584720077292">
+    <state width="1322" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584802621634" />
+    <state width="1322" height="174" key="GridCell.Tab.0.right" timestamp="1584802621634">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="255" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584720077292" />
+    <state width="1322" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584802621634" />
     <state width="1322" height="255" key="GridCell.Tab.1.bottom" timestamp="1584720077293">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -266,9 +285,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1322" height="255" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1584720077293" />
-    <state x="384" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1584700944286">
+    <state x="384" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1584794562360">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="384" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584700944286" />
+    <state x="384" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584794562360" />
   </component>
 </project>

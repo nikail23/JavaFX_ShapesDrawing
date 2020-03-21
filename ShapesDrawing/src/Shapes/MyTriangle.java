@@ -21,7 +21,7 @@ public class MyTriangle extends MyShape implements Serializable {
     }
 
     public void SetTriangleFirstPoint(Point firstTrianglePoint) {
-        if ((firstTrianglePoint != null)&&(firstTrianglePoint.x >= 0)&&(firstTrianglePoint.y >= 0)) {
+        if ((firstTrianglePoint != null) && (firstTrianglePoint.x >= 0) && (firstTrianglePoint.y >= 0)) {
             this.firstTrianglePoint = firstTrianglePoint;
         }
     }
@@ -31,7 +31,7 @@ public class MyTriangle extends MyShape implements Serializable {
     }
 
     public void SetTriangleSecondPoint(Point secondTrianglePoint) {
-        if ((secondTrianglePoint != null)&&(secondTrianglePoint.x >= 0)&&(secondTrianglePoint.y >= 0)) {
+        if ((secondTrianglePoint != null) && (secondTrianglePoint.x >= 0) && (secondTrianglePoint.y >= 0)) {
             this.secondTrianglePoint = secondTrianglePoint;
         }
     }
@@ -41,7 +41,7 @@ public class MyTriangle extends MyShape implements Serializable {
     }
 
     public void SetTriangleThirdPoint(Point thirdTrianglePoint) {
-        if ((thirdTrianglePoint != null)&&(thirdTrianglePoint.x >= 0)&&(thirdTrianglePoint.y >= 0)) {
+        if ((thirdTrianglePoint != null) && (thirdTrianglePoint.x >= 0) && (thirdTrianglePoint.y >= 0)) {
             this.thirdTrianglePoint = thirdTrianglePoint;
         }
     }
@@ -83,9 +83,9 @@ public class MyTriangle extends MyShape implements Serializable {
     }
 
     @Override
-    public void draw(Canvas canvas) {
+    public void Draw(Canvas canvas) {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-        graphicsContext.setFill(GetColor());
+        graphicsContext.setStroke(GetColor());
         graphicsContext.setLineWidth(shapeThickness);
         graphicsContext.beginPath();
         graphicsContext.moveTo(firstTrianglePoint.x, firstTrianglePoint.y);

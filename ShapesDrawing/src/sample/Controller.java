@@ -4,13 +4,14 @@ import java.awt.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
+import GuiManager.GuiManager;
+import GuiManager.MyGuiManager;
+import ShapeFormer.MyShapeFormer;
 import ShapeFormer.ShapeFormer;
 import Shapes.MyShape;
 import ShapesListManager.Serializer.BinarySerializer;
+import ShapesListManager.MyShapesListManager;
 import ShapesListManager.ShapesListManager;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -21,17 +22,33 @@ import javafx.scene.control.cell.TextFieldListCell;
 import javafx.scene.input.MouseEvent;
 
 public class Controller {
+    private static int shapesLimit = 100;
     private ShapesListManager shapesListManager;
     private ShapeFormer shapeFormer;
+    private GuiManager guiManager;
 
     public Controller() {
-        shapesListManager = new ShapesListManager(new ArrayList<MyShape>(), new ArrayList<MyShape>(), new BinarySerializer("save.bin"));
-        shapeFormer = new ShapeFormer();
+        shapesListManager = new MyShapesListManager(new ArrayList<MyShape>(), new ArrayList<MyShape>(), new BinarySerializer("save.bin"));
+        shapeFormer = new MyShapeFormer();
+        guiManager = new MyGuiManager();
     }
 
     private void ClearCanvas(Canvas canvas) {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+    }
+
+    private void ClearPropertyList() {
+        propertyList.getItems().clear();
+        propertyNameList.getItems().clear();
+    }
+
+    private void ShowShapesLimitMessage() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Внимание!");
+        alert.setHeaderText(null);
+        alert.setContentText("Вы достигли предельного количества фигур!");
+        alert.showAndWait();
     }
 
     private Point GetClickPoint(MouseEvent event) {
@@ -120,10 +137,10 @@ public class Controller {
         assert propertyNameList != null : "fx:id=\"propertyNameList\" was not injected: check your FXML file 'sample.fxml'.";
         propertyList.setCellFactory(TextFieldListCell.forListView());
         propertyList.setOnEditCommit(event -> {
-            shapesListManager.ConfirmShapeChanges(propertyList, event.getNewValue(), event.getIndex());
             ClearCanvas(drawingCanvas);
-            shapesListManager.RefreshListView(shapesList);
-            shapesListManager.DrawAllShapes(drawingCanvas);
+            guiManager.ConfirmShapeChanges(propertyList, event.getNewValue(), event.getIndex());
+            guiManager.RefreshShapesListView(shapesListManager.GetList(), shapesList);
+            guiManager.DrawAllShapes(shapesListManager.GetList(), drawingCanvas);
         });
         rectangleButton.setOnAction(e -> {
             shapeFormer.SetShapeTag(1);
@@ -147,51 +164,58 @@ public class Controller {
             shapeFormer.SetFirstPoint(new Point(GetClickPoint(event)));
         });
         drawingCanvas.setOnMouseReleased(event -> {
-            shapeFormer.SetSecondPoint(new Point(GetClickPoint(event)));
-            shapesListManager.Add(shapeFormer.CreateShape());
-            shapesListManager.RefreshListView(shapesList);
-            shapesListManager.DrawAllShapes(drawingCanvas);
+            if (shapesListManager.GetList().size() < shapesLimit) {
+                ClearPropertyList();
+                shapeFormer.SetSecondPoint(new Point(GetClickPoint(event)));
+                shapesListManager.Add(shapeFormer.CreateShape());
+                guiManager.RefreshShapesListView(shapesListManager.GetList(), shapesList);
+                guiManager.DrawAllShapes(shapesListManager.GetList(), drawingCanvas);
+            } else {
+                ShowShapesLimitMessage();
+            }
         });
         colorDialog.setOnAction(event -> {
             shapeFormer.SetShapeColor(colorDialog.getValue());
         });
-        thicknessBar.valueProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                int newShapeThickness = newValue.intValue();
-                shapeFormer.SetShapeThickness(newShapeThickness);
-                String stringShapeThickness = String.valueOf(newValue.intValue());
-                thicknessValue.setText(stringShapeThickness);
-            }
+        thicknessBar.valueProperty().addListener((observable, oldValue, newValue) -> {
+            int ShapeThicknessValue = newValue.intValue();
+            shapeFormer.SetShapeThickness(ShapeThicknessValue);
+            String StringShapeThicknessValue = String.valueOf(newValue.intValue());
+            thicknessValue.setText(StringShapeThicknessValue);
         });
         undoButton.setOnAction(event -> {
             shapesListManager.Undo();
             ClearCanvas(drawingCanvas);
-            shapesListManager.RefreshListView(shapesList);
-            shapesListManager.DrawAllShapes(drawingCanvas);
+            guiManager.RefreshShapesListView(shapesListManager.GetList(), shapesList);
+            ClearPropertyList();
+            guiManager.DrawAllShapes(shapesListManager.GetList(), drawingCanvas);
         });
         redoButton.setOnAction(event -> {
-            shapesListManager.Redo();
             ClearCanvas(drawingCanvas);
-            shapesListManager.RefreshListView(shapesList);
-            shapesListManager.DrawAllShapes(drawingCanvas);
+            ClearPropertyList();
+            shapesListManager.Redo();
+            guiManager.RefreshShapesListView(shapesListManager.GetList(), shapesList);
+            guiManager.DrawAllShapes(shapesListManager.GetList(), drawingCanvas);
         });
         saveButton.setOnAction(event -> {
             shapesListManager.SaveList();
         });
         loadButton.setOnAction(event -> {
+            ClearPropertyList();
+            shapesListManager.ClearDeletedShapesList();
             shapesListManager.LoadList();
-            shapesListManager.RefreshListView(shapesList);
-            shapesListManager.DrawAllShapes(drawingCanvas);
+            guiManager.RefreshShapesListView(shapesListManager.GetList(), shapesList);
+            guiManager.DrawAllShapes(shapesListManager.GetList(), drawingCanvas);
         });
         clearButton.setOnAction(event -> {
+            ClearPropertyList();
+            ClearCanvas(drawingCanvas);
             shapesListManager.ClearCurrentShapesList();
             shapesListManager.ClearDeletedShapesList();
-            shapesListManager.RefreshListView(shapesList);
-            ClearCanvas(drawingCanvas);
+            guiManager.RefreshShapesListView(shapesListManager.GetList(), shapesList);
         });
         shapesList.setOnMouseClicked(event -> {
-            shapesListManager.ShowShapesProperties(shapesList.getSelectionModel().getSelectedIndex(), propertyList, propertyNameList);
+            guiManager.ShowShapesProperties(shapesList.getSelectionModel().getSelectedIndex(), shapesListManager.GetList(), propertyList, propertyNameList);
         });
     }
 }

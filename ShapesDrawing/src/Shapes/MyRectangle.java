@@ -3,6 +3,7 @@ package Shapes;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+
 import java.awt.*;
 import java.io.Serializable;
 
@@ -69,7 +70,7 @@ public class MyRectangle extends MyShape implements Serializable {
     }
 
     @Override
-    public void draw(Canvas canvas) {
+    public void Draw(Canvas canvas) {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.setFill(GetColor());
         graphicsContext.fillRect(x, y, width, height);
